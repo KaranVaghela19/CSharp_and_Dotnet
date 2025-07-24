@@ -43,6 +43,7 @@ namespace Generic_HashSet
             ss.Add("Mumbai");
 
           Console.WriteLine(  ss.Contains("Pune"));
+            Console.WriteLine(ss.Remove("Pune"));
 
             foreach (var sortedset in ss)
             {
