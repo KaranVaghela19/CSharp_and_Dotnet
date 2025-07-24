@@ -27,6 +27,7 @@ namespace SortedDictionary
             Console.WriteLine(sd.TryGetValue(100, out name ));
             Console.WriteLine("______________________________________________");
 
+            Console.WriteLine("Iterating Through For Each Loop");
 
 
             foreach (var sorteddic in sd)
