@@ -75,6 +75,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic_HashSet_and_SortedS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortedDictionary", "SortedDictionary\SortedDictionary.csproj", "{3172AE3D-4A3D-4B9B-85F5-40D66FABA417}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO_Connection", "ADO_Connection\ADO_Connection.csproj", "{28F904C2-735E-42FF-ABFA-4C690D9D5EE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +227,10 @@ Global
 		{3172AE3D-4A3D-4B9B-85F5-40D66FABA417}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3172AE3D-4A3D-4B9B-85F5-40D66FABA417}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3172AE3D-4A3D-4B9B-85F5-40D66FABA417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28F904C2-735E-42FF-ABFA-4C690D9D5EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F904C2-735E-42FF-ABFA-4C690D9D5EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F904C2-735E-42FF-ABFA-4C690D9D5EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F904C2-735E-42FF-ABFA-4C690D9D5EE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

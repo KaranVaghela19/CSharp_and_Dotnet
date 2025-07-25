@@ -20,6 +20,12 @@ namespace Arrays
             {
                 Console.WriteLine(arr);
             }
+            Console.WriteLine("________________________________");
+            Console.WriteLine("Methods of Array");
+
+
+
+            Console.WriteLine(A.Contains(5));
             Console.ReadLine();
         }
     }
