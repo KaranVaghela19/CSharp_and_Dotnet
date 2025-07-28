@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
 
-
-
 namespace ADO_Connection
 {
     class SQLCommandCLass
@@ -15,23 +13,21 @@ namespace ADO_Connection
         static void Main(string[] args)
         {
             new SQLCommandCLass().RetriveTable();
-            Console.ReadKey();
-
             new SQLCommandCLass().Selectrows();
             Console.ReadKey();
 
             /*  new SQLCommandCLass().manipulation();
               Console.ReadKey(); */
 
-            new SQLCommandCLass().delete();
-            Console.ReadKey();
+        /*    new SQLCommandCLass().delete();
+            Console.ReadKey(); */
         }
-
         public void RetriveTable()
         {
            string constr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-           SqlConnection con = new SqlConnection(constr);
-           string selectQuery = "select * from dbo.Customer";
+            Console.WriteLine("Connection: " + constr);
+            SqlConnection con = new SqlConnection(constr);
+           string selectQuery = "select * from dbo.Customer"; 
 
             SqlCommand sl = new SqlCommand(selectQuery, con);
             try
@@ -75,21 +71,22 @@ namespace ADO_Connection
             SqlConnection con = new SqlConnection(constr);
             SqlCommand sc = new SqlCommand("select count(id) from dbo.Customer",con);
 
-            try
+           try
             {
                 con.Open();
 
                 int totalrows = (int)sc.ExecuteScalar();
                 Console.WriteLine("Total no of rows in table : " +totalrows);
-            }
-            catch (Exception ex)
+                Console.ReadLine();
+          }
+           catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-            }
+               Console.WriteLine(ex.Message);
+           }
             finally
             {
                 con.Close();
-            }
+           }
             Console.ReadKey();
         }
 
@@ -144,5 +141,8 @@ namespace ADO_Connection
             }
             Console.ReadLine();
         }
+
+
+
 }
     } 
