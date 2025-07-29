@@ -11,7 +11,7 @@ namespace AnonymousTypes
     {
         static void Main(string[] args)
         {
-            IList<Student> studentList = new List<Student>() {
+            List<Student> studentList = new List<Student>() {
             new Student() { StudentID = 1, StudentName = "Karan", age = 18 },
             new Student() { StudentID = 2, StudentName = "Mayur",  age = 21 },
             new Student() { StudentID = 3, StudentName = "Nayan",  age = 18 },
