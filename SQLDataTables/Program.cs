@@ -13,7 +13,8 @@ namespace SQLDataTables
     {
         static void Main(string[] args)
         {
-            new Program().insertmultiple();
+        //    new Program().insertmultiple();
+            new Program().updateName();
             Console.ReadKey();
         }
 
@@ -66,6 +67,27 @@ namespace SQLDataTables
             {
                 Console.WriteLine("Duplicate RollNo is not allowed please enter New RollNo");
             }
+        }
+
+        public void updateName()
+        {
+            string cons = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(cons);
+            DataTable dt = new DataTable(" Update Student Table");
+            SqlDataAdapter sd = new SqlDataAdapter("SELECT RollNo, Name, marks FROM Student", con);
+            sd.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                dt.Rows[1]["Name"] = "Mahesh";
+            }
+            sd.UpdateCommand = new SqlCommand("UPDATE Student SET Name = @Name WHERE RollNo = @RollNo", con);
+            sd.UpdateCommand.Parameters.Add("@Name", SqlDbType.VarChar, 100, "Name");
+            sd.UpdateCommand.Parameters.Add("@RollNo", SqlDbType.Int, 0, "RollNo");
+            con.Open();
+            int rowsaffected = sd.Update(dt);
+            con.Close();
+
+            Console.WriteLine("Updated data: " + rowsaffected);
         }
 
     }
