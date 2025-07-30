@@ -13,8 +13,8 @@ namespace SQLDataTables
     {
         static void Main(string[] args)
         {
-        //    new Program().insertmultiple();
-            new Program().updateName();
+           new Program().insertmultiple();
+           // new Program().updateName();
             Console.ReadKey();
         }
 
@@ -28,7 +28,7 @@ namespace SQLDataTables
                 dt.Columns.Add("RollNo", typeof(int));
                 dt.Columns.Add("Name", typeof(string));
                 dt.Columns.Add("marks", typeof(int));
-                for (int i = 0; i <2; i++) 
+                for (int i = 0; i <1; i++) 
                 {
                     Console.Write("Enter Roll No: ");
                     int roll = Convert.ToInt32(Console.ReadLine());
@@ -76,9 +76,11 @@ namespace SQLDataTables
             DataTable dt = new DataTable(" Update Student Table");
             SqlDataAdapter sd = new SqlDataAdapter("SELECT RollNo, Name, marks FROM Student", con);
             sd.Fill(dt);
+            Console.WriteLine("Enter the Name you want to update");
+            string inputName = Console.ReadLine();
             if (dt.Rows.Count > 0)
             {
-                dt.Rows[1]["Name"] = "Mahesh";
+                dt.Rows[7]["Name"] = inputName;
             }
             sd.UpdateCommand = new SqlCommand("UPDATE Student SET Name = @Name WHERE RollNo = @RollNo", con);
             sd.UpdateCommand.Parameters.Add("@Name", SqlDbType.VarChar, 100, "Name");
@@ -88,7 +90,10 @@ namespace SQLDataTables
             con.Close();
 
             Console.WriteLine("Updated data: " + rowsaffected);
+            Console.WriteLine("Successfully Updated the Data");
         }
+
+
 
     }
 }
