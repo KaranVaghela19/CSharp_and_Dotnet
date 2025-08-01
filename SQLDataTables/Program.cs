@@ -28,7 +28,7 @@ namespace SQLDataTables
                 dt.Columns.Add("RollNo", typeof(int));
                 dt.Columns.Add("Name", typeof(string));
                 dt.Columns.Add("marks", typeof(int));
-                for (int i = 0; i <1; i++) 
+                for (int i = 0; i <2; i++) 
                 {
                     Console.Write("Enter Roll No: ");
                     int roll = Convert.ToInt32(Console.ReadLine());
